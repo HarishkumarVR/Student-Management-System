@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Student Management System</h1>
+      <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/students">Students</a>
+        <a href="/marks">Marksheet</a>
+        <a href="/attendance">Attendance</a>
+        <form method="post" action="/signout" style="display:inline">
+          <button type="submit">Sign out</button>
+        </form>
+      </nav>
+    </header>
+    <main>
+      <!-- EJS include-friendly layout shim -->
+      <%- typeof body !== 'undefined' ? body : include('../partials/yield') %>
+    </main>
+  </body>
+</html>
+
+

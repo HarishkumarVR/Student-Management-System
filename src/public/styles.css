@@ -1,0 +1,303 @@
+/*Basic reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+nav {
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 1rem;
+  padding: 0.5rem;
+}
+
+nav button {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Main content */
+main {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Sections */
+section {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+/* Forms */
+form {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+/* Table input styling - Fix for overlapping */
+table input[type="number"] {
+  width: 80px;
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+table input[type="number"]:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Buttons */
+button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+/* Dashboard buttons */
+.dashboard-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.dashboard-buttons a {
+  text-decoration: none;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  table-layout: fixed;
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+th {
+  background: #34495e;
+  color: white;
+  font-weight: bold;
+}
+
+tr:hover {
+  background: #f8f9fa;
+}
+
+/* Marks table specific column widths */
+.marks-table th:nth-child(1), .marks-table td:nth-child(1) { width: 8%; }  /* S.No */
+.marks-table th:nth-child(2), .marks-table td:nth-child(2) { width: 15%; } /* Registration No */
+.marks-table th:nth-child(3), .marks-table td:nth-child(3) { width: 20%; } /* Student Name */
+.marks-table th:nth-child(4), .marks-table td:nth-child(4) { width: 12%; } /* Tamil */
+.marks-table th:nth-child(5), .marks-table td:nth-child(5) { width: 12%; } /* English */
+.marks-table th:nth-child(6), .marks-table td:nth-child(6) { width: 12%; } /* Maths */
+.marks-table th:nth-child(7), .marks-table td:nth-child(7) { width: 12%; } /* Science */
+.marks-table th:nth-child(8), .marks-table td:nth-child(8) { width: 12%; } /* Social Science */
+.marks-table th:nth-child(9), .marks-table td:nth-child(9) { width: 17%; } /* Action */
+
+/* Prevent text overflow in table cells */
+.marks-table th, .marks-table td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.75rem 0.5rem;
+}
+
+/* Specific styling for registration number and name columns */
+.marks-table th:nth-child(2), .marks-table td:nth-child(2),
+.marks-table th:nth-child(3), .marks-table td:nth-child(3) {
+  white-space: normal;
+  word-wrap: break-word;
+  min-width: 120px;
+}
+
+/* Ensure proper spacing between columns */
+.marks-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Add borders to make columns more distinct */
+.marks-table th, .marks-table td {
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.marks-table th {
+  background-color:black;
+  font-weight: bold;
+}
+
+/* Action buttons */
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-edit {
+  background: #27ae60;
+}
+
+.btn-delete {
+  background: #e74c3c;
+}
+
+/* Form actions */
+.form-actions {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+/* Error messages */
+.error {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* Attendance totals */
+.attendance-totals {
+  background: #34495e;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.totals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.total-number {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Links */
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+  
+  .dashboard-buttons {
+    grid-template-columns: 1fr;
+  }
+  
+  .totals-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Mobile table fixes */
+  table {
+    font-size: 0.8rem;
+  }
+  
+  th, td {
+    padding: 0.5rem 0.25rem;
+  }
+  
+  table input[type="number"] {
+    width: 60px;
+    padding: 0.25rem;
+    font-size: 0.8rem;
+  }
+}

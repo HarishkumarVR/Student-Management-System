@@ -1,0 +1,29 @@
+<% layout('partials/layout') -%>
+<section>
+  <h2><%= student ? 'Edit Student' : 'Add Student' %></h2>
+  <% if (error) { %>
+    <div class="error"><%= error %></div>
+  <% } %>
+  <form method="post" action="<%= student ? '/students/' + student.id : '/students' %>">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required value="<%= student ? student.name : '' %>" />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required value="<%= student ? student.email : '' %>" />
+    </div>
+    <div class="form-group">
+      <label for="reg_no">Registration No</label>
+      <input type="text" id="reg_no" name="reg_no" required value="<%= student ? student.reg_no : '' %>" />
+    </div>
+    <div class="form-group">
+      <label for="department">Department</label>
+      <input type="text" id="department" name="department" required value="<%= student ? student.department : '' %>" />
+    </div>
+    <div class="form-actions">
+      <button type="submit"><%= student ? 'Update' : 'Submit' %></button>
+      <a href="/students"><button type="button">Cancel</button></a>
+    </div>
+  </form>
+</section>

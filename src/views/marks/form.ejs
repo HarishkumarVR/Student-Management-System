@@ -1,0 +1,34 @@
+<% layout('partials/layout') -%>
+<section>
+  <h2>Enter Marks</h2>
+  <form method="post" action="/marks/<%= student.id %>">
+    <table class="marks-table">
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Registration No</th>
+          <th>Student Name</th>
+          <th>Tamil</th>
+          <th>English</th>
+          <th>Maths</th>
+          <th>Science</th>
+          <th>Social Science</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><%= student.reg_no %></td>
+          <td><%= student.name %></td>
+          <td><input type="number" name="tamil" min="0" max="100" required /></td>
+          <td><input type="number" name="english" min="0" max="100" required /></td>
+          <td><input type="number" name="maths" min="0" max="100" required /></td>
+          <td><input type="number" name="science" min="0" max="100" required /></td>
+          <td><input type="number" name="social_science" min="0" max="100" required /></td>
+          <td><button type="submit">Submit</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</section>

@@ -1,0 +1,47 @@
+<% layout('partials/layout') -%>
+<section>
+  <h2>Attendance</h2>
+  <form method="post" action="/attendance">
+    <table>
+      <thead>
+        <tr>
+          <th>Student</th>
+          <th>Present</th>
+          <th>Absent</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% students.forEach(s => { %>
+        <tr>
+          <td><%= s.name %></td>
+          <td><input type="radio" name="student_<%= s.id %>" value="present" required></td>
+          <td><input type="radio" name="student_<%= s.id %>" value="absent"></td>
+        </tr>
+      <% }) %>
+      </tbody>
+    </table>
+    <div class="form-actions">
+      <button type="submit">Submit Attendance</button>
+    </div>
+  </form>
+
+  <% if (totals) { %>
+    <div class="attendance-totals">
+      <h3>Today's Summary</h3>
+      <div class="totals-grid">
+        <div class="total-item">
+          <div class="total-number"><%= totals.total %></div>
+          <div class="total-label">Total Students</div>
+        </div>
+        <div class="total-item">
+          <div class="total-number"><%= totals.present %></div>
+          <div class="total-label">Present</div>
+        </div>
+        <div class="total-item">
+          <div class="total-number"><%= totals.absent %></div>
+          <div class="total-label">Absent</div>
+        </div>
+      </div>
+    </div>
+  <% } %>
+</section>

@@ -1,0 +1,20 @@
+<% layout('partials/layout') -%>
+<section>
+  <h2>Marksheet</h2>
+  <% if (error) { %><div class="error"><%= error %></div><% } %>
+  <form method="get" action="/marks/" id="chooseStudent">
+    <div class="form-group">
+      <label for="student">Select Student</label>
+      <select id="student" name="student" onchange="if(this.value) window.location='/marks/' + this.value">
+        <option value="">-- Select --</option>
+        <% students.forEach(s => { %>
+          <option value="<%= s.id %>"><%= s.name %> (<%= s.reg_no %>)</option>
+        <% }) %>
+      </select>
+    </div>
+  </form>
+  
+  <div style="text-align: center; margin-top: 2rem;">
+    <a href="/marks/summary"><button type="button">View All Marks</button></a>
+  </div>
+</section>

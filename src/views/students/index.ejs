@@ -1,0 +1,34 @@
+<% layout('partials/layout') -%>
+<section>
+  <h2>Students</h2>
+  <a href="/students/new"><button>Add Student</button></a>
+  <table>
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Registration No</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Dept</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% students.forEach((s, idx) => { %>
+      <tr>
+        <td><%= idx + 1 %></td>
+        <td><%= s.reg_no %></td>
+        <td><%= s.name %></td>
+        <td><%= s.email %></td>
+        <td><%= s.department %></td>
+        <td class="action-buttons">
+          <a href="/students/<%= s.id %>/edit"><button class="btn-edit">Edit</button></a>
+          <form method="post" action="/students/<%= s.id %>/delete" style="display:inline">
+            <button type="submit" class="btn-delete" onclick="return confirm('Delete this student?')">Delete</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+    </tbody>
+  </table>
+</section>

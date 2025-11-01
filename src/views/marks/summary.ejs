@@ -1,0 +1,55 @@
+<% layout('partials/layout') -%>
+<section>
+  <h2>Marks Summary</h2>
+  
+  <% if (typeof error !== 'undefined' && error) { %>
+    <div class="error"><%= error %></div>
+  <% } %>
+  
+  <% if (entries && entries.length > 0) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Reg No</th>
+          <th>Name</th>
+          <th>Tamil</th>
+          <th>English</th>
+          <th>Maths</th>
+          <th>Science</th>
+          <th>Social Science</th>
+          <th>Total</th>
+          <th>Grade</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% entries.forEach(e => { %>
+        <tr>
+          <td><%= e.id %></td>
+          <td><%= e.reg_no %></td>
+          <td><%= e.name %></td>
+          <td><%= e.tamil %></td>
+          <td><%= e.english %></td>
+          <td><%= e.maths %></td>
+          <td><%= e.science %></td>
+          <td><%= e.social_science %></td>
+          <td><%= e.total %></td>
+          <td><%= e.grade %></td>
+          <td><%= e.pass ? 'Pass' : 'Fail' %></td>
+        </tr>
+      <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <div style="text-align: center; padding: 2rem; color: #666;">
+      <p>No marks have been entered yet.</p>
+      <p><a href="/marks">Go to Marksheet to enter marks</a></p>
+    </div>
+  <% } %>
+  
+  <div style="text-align: center; margin-top: 2rem;">
+    <a href="/marks"><button type="button">Enter More Marks</button></a>
+    <a href="/dashboard"><button type="button">Back to Dashboard</button></a>
+  </div>
+</section>
